@@ -36,7 +36,7 @@ class Digraph:
   def DFS(self,source : int) -> List[int]:
     # cheesy wrapper to keep us from 
     # including source in reachable nodes
-    return self._DFS(source,set([source]))
+    return [source] + self._DFS(source,set())
 
   def DFSMultiSource(self, source : Iterable[int]) -> Dict[int,List[int]]:
     return {s:self.DFS(s) for s in source}
